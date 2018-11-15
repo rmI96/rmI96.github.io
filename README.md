@@ -7,5 +7,5 @@
   <li><a href="http://locksmith24toronto.com/">locksmith24toronto</a></li>
   <li><a href="http://artgta.com/">ART</a></li>
   <li><a href="http://takelag-system.com.ua/">takelag-system</a></li>
-  <li><a href="https://rat.compas.agency/leomed/">leomed</a></li>
+  <li><a href="https://proctologist.com.ua/">leomed</a></li>
 </ul>
