@@ -1,0 +1,41 @@
+pre{
+	background-color: #f8f8f8;
+	color: #e83e8c;
+	padding: 15px;
+}
+.block-js{
+	position: relative;
+}
+.block-js:after{
+    content: 'JS';
+    display: inline-block;
+    background-color: #717070;
+    padding: 2px 5px;
+    font-size: 10px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+	letter-spacing: 1px;
+}
+.block-html{
+	position: relative;
+}
+.block-html:after{
+    content: 'HTML';
+    display: inline-block;
+    background-color: #717070;
+    padding: 2px 5px;
+    font-size: 10px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+	letter-spacing: 1px;
+}
+.menu-s{
+	position: sticky;
+    top: 10px;
+    font-size: 15px;
+    padding-left: 25px;
+}

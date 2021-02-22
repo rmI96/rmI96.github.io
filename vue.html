@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+	<div class="container">
+    	<hr>
+    	<div class="text-center">	
+    		<h4>VUE.JS (Guide)</h4>
+    	</div>
+    	<hr>
+    	<div class="row">
+    		<div class="col-lg-3">
+    			<ul class="menu-s">
+    				<li><a href="#interpolation">Интерполяция</a></li>
+    				<li><a href="#dynamic-attributes">Динамические атрибуты</a></li>
+    				<li><a href="#HTML-code">Вывод HTML кода</a></li>
+    				<li><a href="#adding-events">Добавление событий</a></li>
+    				<li><a href="#transfer-parameters-method">Передача параметров в метод</a></li>
+    			</ul>
+    		</div>
+    		<div class="col-lg-9">
+
+    			<h5 id="interpolation">Интерполяция</h5>
+    			<hr>
+    			<code>
+    				<pre class="block-html">{{ variable }}</pre>
+    			</code>
+    			<p>Вывод различных типов переменной.</p>
+    			<code>
+<pre class="block-html">
+String: {{ name }}
+Sum: {{ 90 + 30 }}
+Numeber: {{ numeber }}
+Method: {{ functionName() }}
+If statement: {{ true ? 'I am OK' : '' }}</pre>
+    			</code>
+    			<hr>
+
+
+    			<h5 id="dynamic-attributes">Динамические атрибуты</h5>
+    			<hr>
+    			<p>v N1</p>
+    			<code>
+    				<pre class="block-html">v-bind:href="variable"</pre>
+    			</code>
+    			<p>v N2</p>
+    			<code>
+<pre class="block-html">
+:href="variable"
+:src="'/path/path/' + varoable"
+:class="{ className: isTrue }"
+:style="{ fontSize: size + 'px' }"
+</pre>
+    			</code>
+    			<hr>
+
+    			<h5 id="HTML-code">Вывод HTML кода</h5>
+    			<hr>
+    			<code>
+<pre class="block-js">
+new Vue({
+  data: {
+    variableName: '&lt;a href="https://www.google.com/"&gt;Google&lt;/a&gt;'
+  }
+})</pre>
+    			</code>
+    			<code>
+<pre class="block-html">&lt;div v-html="variableName"&gt;&lt;/div&gt;</pre>
+    			</code>
+    			<hr>
+
+
+    			<h5 id="adding-events">Добавление событий</h5>
+    			<hr>
+    			<p>v N1</p>
+    			    			<code>
+<pre class="block-html">&lt;div v-on:click="functionName"&gt;&lt;/div&gt;</pre>
+    			</code>
+    			<p>v N2</p>
+    			<code>
+<pre class="block-html">&lt;div @click="functionName"&gt;&lt;/div&gt;</pre>
+    			</code>
+
+				<code>
+<pre class="block-js">
+new Vue({
+  methods: {
+    functionName: function(){
+      //code
+    }
+  }
+})</pre>
+    			</code>
+
+
+    			<h5 id="transfer-parameters-method">Передача параметров в метод</h5>
+    			<hr>
+    			<code>
+<pre class="block-html">&lt;div @click="functionName(10, $event)"&gt;&lt;/div&gt;</pre>
+    			</code>
+
+				<code>
+<pre class="block-js">
+new Vue({
+  methods: {
+    functionName: function(n, event){
+      //code
+    }
+  }
+})</pre>
+
+    		</div>
+    	</div>
+    </div>
+</body>
+</html>
