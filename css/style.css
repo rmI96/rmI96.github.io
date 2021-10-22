@@ -1,7 +1,62 @@
+html:not(.touch-screen)::-webkit-scrollbar,
+html:not(.touch-screen) *::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+html:not(.touch-screen)::-webkit-scrollbar-track,
+html:not(.touch-screen) *::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.08);
+    border-radius: 4px;
+}
+
+html:not(.touch-screen)::-webkit-scrollbar-thumb,
+html:not(.touch-screen) *::-webkit-scrollbar-thumb {
+    background: #717070;
+}
+
+code, kbd, pre, samp {
+    font-family: "Segoe UI",sans-serif;
+    font-size: 1em;
+    line-height: 1.4em;
+}
+.container-cs{
+    width: 100%;
+    max-width: 1300px;
+    padding: 0 15px;
+    margin: 0 auto;
+}
 pre{
-	background-color: #f8f8f8;
-	color: #e83e8c;
-	padding: 15px;
+    background-color: #282923;
+    color: #fff;
+    padding: 15px;
+    font-size: 15px;
+    letter-spacing: 0.6px;
+    font-weight: 600;
+}
+.operator {
+    color: #e4256a;
+}
+.keyword {
+    color: #5bcbe6;
+}
+.string {
+    color: #d2c86b;
+}
+.lg {
+    color: #a77beb;
+}
+.fn {
+    color: #8bcf2b;
+}
+.or {
+    color: #df8622;
+}
+.comment {
+    color: #736f5d;
+    font-size: 15px;
+    display: inline-block;
+    padding: 0 5px;
 }
 .block-js{
 	position: relative;
@@ -34,7 +89,7 @@ pre{
 	letter-spacing: 1px;
 }
 .menu-s{
-	position: sticky;
+	/*position: sticky;*/
     top: 10px;
     font-size: 15px;
     padding-left: 25px;
