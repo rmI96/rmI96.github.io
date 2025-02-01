@@ -15,17 +15,23 @@ html:not(.touch-screen) *::-webkit-scrollbar-thumb {
     background: #717070;
 }
 
-/*code, kbd, pre, samp {*/
-/*    font-family: "Segoe UI",sans-serif;*/
-/*    font-size: 1em;*/
-/*    line-height: 1.4em;*/
-/*}*/
 .container-cs{
     width: 100%;
     max-width: 1300px;
     padding: 0 15px;
     margin: 0 auto;
 }
+
+/* SP */
+
+.sp-mb-10{
+    margin-bottom: 10px;
+}
+
+.sp-mb-30{
+    margin-bottom: 30px;
+}
+
 .operator {
     color: #e4256a;
 }
@@ -94,3 +100,4 @@ html:not(.touch-screen) *::-webkit-scrollbar-thumb {
     overflow-y: auto;
     max-height: calc(100vh - 10px);
 }
+
