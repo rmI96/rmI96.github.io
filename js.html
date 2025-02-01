@@ -11,35 +11,38 @@
 <body>
 <div class="container-cs">
     <hr>
+
     <div class="text-center">
         <h4>JS</h4>
     </div>
 
     <div class="row">
         <div class="col-lg-3">
-            <h5>Основы JavaScript</h5>
-            <hr>
-            <ul class="menu-s">
-                <li><a href="#id_1">Переменные</a></li>
-                <li><a href="#id_2">Базовые операции</a></li>
-                <li><a href="#id_3">Операторы сравнения</a></li>
-                <li><a href="#id_4">Логические операторы</a>
-                <li><a href="#id_5">Условные операторы (if, else)</a></li>
-                <li><a href="#id_6">Тернарные операторы</a></li>
-                <li><a href="#id_7">Оператор Switch Case</a></li>
-                <li><a href="#id_8">Функции</a></li>
-                <li><a href="#id_9">Строки</a></li>
-                <li><a href="#id_10">Числа</a></li>
-                <li><a href="#id_11">Массивы</a></li>
-                <li><a href="#id_12">Объекты</a></li>
-                <li><a href="#id_13">Циклы</a></li>
-            </ul>
-            <hr>
-            <h5>Работа с DOM</h5>
-            <hr>
-            <ul class="menu-s">
-                <li><a href="#id_14">Доступ к элементам</a></li>
-            </ul>
+            <div class="menu-s__wrapper">
+                <h5>Основы JavaScript</h5>
+                <hr>
+                <ul class="menu-s">
+                    <li><a href="#id_1">Переменные</a></li>
+                    <li><a href="#id_2">Базовые операции</a></li>
+                    <li><a href="#id_3">Операторы сравнения</a></li>
+                    <li><a href="#id_4">Логические операторы</a>
+                    <li><a href="#id_5">Условные операторы (if, else)</a></li>
+                    <li><a href="#id_6">Тернарные операторы</a></li>
+                    <li><a href="#id_7">Оператор Switch Case</a></li>
+                    <li><a href="#id_8">Функции</a></li>
+                    <li><a href="#id_9">Строки</a></li>
+                    <li><a href="#id_10">Числа</a></li>
+                    <li><a href="#id_11">Массивы</a></li>
+                    <li><a href="#id_12">Объекты</a></li>
+                    <li><a href="#id_13">Циклы</a></li>
+                </ul>
+                <hr>
+                <h5>Работа с DOM</h5>
+                <hr>
+                <ul class="menu-s">
+                    <li><a href="#id_14">Доступ к элементам</a></li>
+                </ul>
+            </div>
         </div>
         <div class="col-lg-9">
             <div>
@@ -231,7 +234,8 @@ str.<span class="keyword">includes</span>(<span class="string">'Text'</span>) <s
 str.<span class="keyword">slice</span>(<span class="lg">0</span>, <span class="lg">2</span>) <span class="comment">/*Извлекает часть строки ('Tex')*/</span>
 str.<span class="keyword">trim</span>() <span class="comment">/*Удаляет пробельные символы с начала и конца строки*/</span>
 str.<span class="keyword">trimLeft</span>() <span class="comment">/*Удаляет пробельные символы с левого конца строки*/</span>
-str.<span class="keyword">trimRight</span>() <span class="comment">/*Удаляет пробельные символы с правого конца строки*/</span></pre>
+str.<span class="keyword">trimRight</span>() <span class="comment">/*Удаляет пробельные символы с правого конца строки*/</span>
+str.<span class="keyword">search</span>(<span class="string">'tex'</span>) <span class="comment">/*Search*/</span></pre>
                     </code>
                 </div>
                 <div class="block-wrapper">
@@ -260,6 +264,7 @@ num.<span class="keyword">toFixed</span>(<span class="lg">1</span>) <span class=
 <span class="keyword">var</span> arr <span class="operator">=</span> [<span class="lg">1</span>,<span class="lg">2</span>,<span class="lg">3</span>,<span class="lg">4</span>]
 arr.length <span class="comment">/* Возвращает число элементов массива */</span>
 arr.<span class="keyword">push</span>(y) <span class="comment">/* Добавляет один или более элементов в конец массива и возвращает новую длину массива */</span>
+<span class="keyword">Array.isArray</span>(arr) /*  */</span>
 arr.<span class="keyword">unshift</span>(y) <span class="comment">/* Добавляет один или более элементов в начало массива и возвращает новую длину массива */</span>
 arr.<span class="keyword">pop</span>() <span class="comment">/* Удаляет последний элемент из массива и возвращает его значение */</span>
 arr.<span class="keyword">shift</span>() <span class="comment">/* Удаляет первый элемент из массива и возвращает его значение */</span>
@@ -278,6 +283,9 @@ arr.<span class="keyword">forEach</span>(<span class="keyword">function</span>(e
   <span class="keyword">console.log</span>(e)
 })
 <span class="keyword">var</span> y <span class="operator">=</span> x.<span class="keyword">find</span>(<span class="keyword">function</span>(e){ <span class="comment">/* Возвращает значение первого найденного в массиве элемента */</span>
+  <span class="operator">return</span> e <span class="operator">===</span> 2
+})
+<span class="keyword">var</span> y <span class="operator">=</span> x.<span class="keyword">findIndex</span>(<span class="keyword">function</span>(e){ <span class="comment">/* Возвращает Index первого найденного в массиве элемента */</span>
   <span class="operator">return</span> e <span class="operator">===</span> 2
 })
 <span class="keyword">var</span> y <span class="operator">=</span> arr.<span class="keyword">filter</span>(<span class="keyword">function</span>(e){ <span class="comment">/* Создаёт новый массив со всеми элементами, прошедшими проверку, задаваемую в передаваемой функции */</span>

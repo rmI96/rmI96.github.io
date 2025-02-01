@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>VUE.JS (Basics)</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+	<div class="container">
+    	<hr>
+    	<div class="text-center">
+    		<h4>VUE.JS (Basics)</h4>
+    	</div>
+    	<div class="row">
+    		<div class="col-lg-3">
+                <div class="menu-s__wrapper">
+                    <ul class="menu-s">
+                        <li><a href="#interpolation">Интерполяция</a></li>
+                        <li><a href="#dynamic-attributes">Динамические атрибуты</a></li>
+                        <li><a href="#HTML-code">Вывод HTML кода</a></li>
+                        <li><a href="#adding-events">Добавление событий</a></li>
+                        <li><a href="#transfer-parameters-method">Передача параметров в метод</a></li>
+                        <li><a href="#event-modifiers">Модификаторы событий</a></li>
+                        <li><a href="#vmodel">Модель для работы с формами</a></li>
+                        <li><a href="#CSS-classes">Работа с CSS классами</a></li>
+                        <li><a href="#dynamic-styles">Динамические стили</a></li>
+                        <li><a href="#display-items">Управление отображением элементов</a></li>
+                        <li><a href="#working-with-lists">Работа со списками</a></li>
+                        <li><a href="#computed">Оптимизация приложения с computed</a></li>
+                        <li><a href="#watch">Отслеживание изменений с watch</a></li>
+                        <li><a href="#ref">Доступ к DOM элементам (ref)</a></li>
+                        <li><a href="#life-cycle">Жизненный цикл</a></li>
+                    </ul>
+                </div>
+    		</div>
+    		<div class="col-lg-9">
+
+
+<div class="block-wrapper">
+<hr>
+<h5 id="interpolation">Интерполяция</h5>
+<hr>
+<pre class="block-html">
+<code class="language-html">
+{{ variable }}
+
+</code>
+</pre>
+<p>Вывод различных типов переменной.</p>
+<pre class="block-html">
+<code class="language-html">
+String: {{ name }}
+Sum: {{ 90 + 30 }}
+Numeber: {{ numeber }}
+Method: {{ functionName() }}
+If statement: {{ true ? 'I am OK' : '' }}
+
+</code>
+</pre>
+</div>
+
+<div class="block-wrapper">
+<hr>
+<h5 id="dynamic-attributes">Динамические атрибуты</h5>
+<hr>
+<p>v N1</p>
+<pre class="block-html">
+<code class="language-html">
+&lt;div v-bind:href="variable"&gt;&lt;/div&gt;
+
+</code>
+</pre>
+<p>v N1</p>
+<pre class="block-html">
+<code class="language-html">
+&lt;div :href="variable"&gt;&lt;/div&gt;
+&lt;div :src="'/path/path/' + var"&gt;&lt;/div&gt;
+&lt;div :class="{ className: isTrue }"&gt;&lt;/div&gt;
+&lt;div :style="{ fontSize: size + 'px' }"&gt;&lt;/div&gt;
+
+</code>
+</pre>
+</div>
+
+<div class="block-wrapper">
+<hr>
+<h5 id="HTML-code">Вывод HTML кода</h5>
+<hr>
+<pre class="block-html">
+<code class="language-html">
+&lt;div v-html="variableName"&gt;&lt;/div&gt;
+
+</code>
+</pre>
+<pre class="block-js">
+<code class="language-js">
+new Vue({
+  data: {
+    variableName: '&lt;a href="https://www.google.com/"&gt;Google&lt;/a&gt;'
+  }
+})
+
+</code>
+</pre>
+</div>
+
+<div class="block-wrapper">
+<hr>
+<h5 id="adding-events">Добавление событий</h5>
+<hr>
+<p>v N1</p>
+<pre class="block-html">
+<code class="language-html">
+&lt;div v-on:click="functionName"&gt;&lt;/div&gt;
+
+</code>
+</pre>
+<p>v N2</p>
+<pre class="block-html">
+<code class="language-html">
+&lt;div @click="functionName"&gt;&lt;/div&gt;
+
+</code>
+</pre>
+<pre class="block-js">
+<code class="language-js">
+new Vue({
+  methods: {
+    functionName: function(){
+      //code
+    }
+  }
+})
+
+</code>
+</pre>
+</div>
+
+<div class="block-wrapper">
+<hr>
+    <h5 id="transfer-parameters-method">Передача параметров в метод</h5>
+<hr>
+<pre class="block-html">
+<code class="language-html">
+&lt;div @click="functionName(10, $event)"&gt;&lt;/div&gt;
+
+</code>
+</pre>
+<pre class="block-js">
+<code class="language-js">
+new Vue({
+  methods: {
+    functionName: function(n, event){
+      //code
+    }
+  }
+})
+
+</code>
+</pre>
+</div>
+
+<div class="block-wrapper">
+<hr>
+    <h5 id="event-modifiers">Модификаторы событий</h5>
+<hr>
+<pre class="block-html">
+<code class="language-html">
+&lt;div @click.prevent="functionName(10, $event)"&gt;&lt;/div&gt;
+
+</code>
+</pre>
+</div>
+
+<div class="block-wrapper">
+<hr>
+<h5 id="vmodel">Модель для работы с формами</h5>
+<hr>
+<pre class="block-html">
+<code class="language-html">
+&lt;input v-model="variableName"&gt;
+
+</code>
+</pre>
+</div>
+
+<div class="block-wrapper">
+<hr>
+    <h5 id="CSS-classes">Работа с CSS классами</h5>
+<hr>
+<pre class="block-html">
+<code class="language-html">
+&lt;div :class="variableName"&gt;&lt;/div&gt;
+&lt;div :class="{'className': isTrue, 'className': !isFalse}"&gt;&lt;/div&gt;
+&lt;div :class="[classNameA, classNameB]"&gt;&lt;/div&gt;
+&lt;div :class="[classNameA, { classNameB: isTrue, classNameC: isTrue }]"&gt;&lt;/div&gt;
+
+</code>
+</pre>
+</div>
+
+<div class="block-wrapper">
+<hr>
+    <h5 id="dynamic-styles">Динамические стили</h5>
+<hr>
+<pre class="block-html">
+<code class="language-html">
+&lt;div :style="{'background': color, 'height': height + 'px', 'width': height + 'px'}"&gt;&lt;/div&gt;
+
+</code>
+</pre>
+</div>
+
+<div class="block-wrapper">
+<hr>
+<h5 id="display-items">Управление отображением элементов</h5>
+<hr>
+<p>v N1</p>
+<pre class="block-html">
+<code class="language-html">
+&lt;div v-if="false === true"&gt;&lt;/div&gt;
+&lt;div v-else-if="false === true"&gt;&lt;/div&gt;
+&lt;div v-else&gt;&lt;/div&gt;
+
+</code>
+</pre>
+<p>v N2</p>
+<pre class="block-html">
+<code class="language-html">
+&lt;div v-show="isTrue"&gt;&lt;/div&gt;
+
+</code>
+</pre>
+</div>
+
+<div class="block-wrapper">
+<hr>
+<h5 id="working-with-lists">Работа со списками</h5>
+<hr>
+<pre class="block-html">
+<code class="language-html">
+&lt;div v-for="(value, key, index) in arrayName"&gt; {{index + 1}} {{key}} {{value}} &lt;/div&gt;
+
+</code>
+</pre>
+</div>
+
+<div class="block-wrapper">
+<hr>
+<h5 id="computed">Оптимизация приложения с computed</h5>
+<hr>
+<pre class="block-js">
+<code class="language-javascript">
+new Vue({
+  computed: {
+    functionName: function(){
+      return 1 + 3
+    }
+  }
+})
+
+</code>
+</pre>
+</div>
+
+<div class="block-wrapper">
+    <hr>
+    <h5 id="watch">Отслеживание изменений с watch</h5>
+    <hr>
+
+    <pre class="block-js">
+<code class="language-javascript">
+new Vue({
+  data: {
+    variableName: 0
+  },
+  watch: {
+    variableName: function(val, val2){
+      //code
+    }
+  }
+})
+
+</code>
+</pre>
+</div>
+
+<div class="block-wrapper">
+<hr>
+<h5 id="ref">Доступ к DOM элементам (ref)</h5>
+<hr>
+<pre class="block-html">
+<code class="language-html">
+&lt;div ref="refName"&gt;&lt;/div&gt;
+
+</code>
+</pre>
+
+<pre class="block-js">
+<code class="language-javascript">
+new Vue({
+  data: {
+    variableName: 0
+  },
+  methods: {
+    functionName: function(){
+      this.$refs.refName
+    }
+  }
+})
+
+</code>
+</pre>
+</div>
+
+<div class="block-wrapper">
+<hr>
+<h5 id="life-cycle">Жизненный цикл</h5>
+<hr>
+<pre class="block-js">
+<code class="language-javascript">
+new Vue({
+    beforeCreate: function(){
+      //code
+    },
+    created: function(){
+      //code
+    },
+    beforeMount: function(){
+      //code
+    },
+    mounted: function(){
+      //code
+    },
+    beforeUpdate: function(){
+      //code
+    },
+    updated: function(){
+      //code
+    },
+    beforeDestroy: function(){
+      //code
+    },
+    destroyed: function(){
+      //code
+    }
+});
+
+</code>
+</pre>
+</div>
+
+
+    		</div>
+    	</div>
+    </div>
+
+    <link rel="stylesheet" href="../libs/highlight/styles/default.min.css">
+    <script src="../libs/highlight/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+</body>
+</html>

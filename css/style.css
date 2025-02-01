@@ -1,7 +1,7 @@
 html:not(.touch-screen)::-webkit-scrollbar,
 html:not(.touch-screen) *::-webkit-scrollbar {
-    width: 10px;
-    height: 10px;
+    width: 4px;
+    height: 4px;
 }
 
 html:not(.touch-screen)::-webkit-scrollbar-track,
@@ -15,24 +15,16 @@ html:not(.touch-screen) *::-webkit-scrollbar-thumb {
     background: #717070;
 }
 
-code, kbd, pre, samp {
-    font-family: "Segoe UI",sans-serif;
-    font-size: 1em;
-    line-height: 1.4em;
-}
+/*code, kbd, pre, samp {*/
+/*    font-family: "Segoe UI",sans-serif;*/
+/*    font-size: 1em;*/
+/*    line-height: 1.4em;*/
+/*}*/
 .container-cs{
     width: 100%;
     max-width: 1300px;
     padding: 0 15px;
     margin: 0 auto;
-}
-pre{
-    background-color: #282923;
-    color: #fff;
-    padding: 15px;
-    font-size: 15px;
-    letter-spacing: 0.6px;
-    font-weight: 600;
 }
 .operator {
     color: #e4256a;
@@ -58,39 +50,47 @@ pre{
     display: inline-block;
     padding: 0 5px;
 }
-.block-js{
+
+.block-js,
+.block-html,
+.block-code {
 	position: relative;
+}
+.block-js:after,
+.block-html:after,
+.block-code:after{
+    display: inline-block;
+    background-color: #717070;
+    padding: 2px 5px;
+    font-size: 11px;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+    letter-spacing: 1px;
 }
 .block-js:after{
     content: 'JS';
-    display: inline-block;
-    background-color: #717070;
-    padding: 2px 5px;
-    font-size: 10px;
-    color: #fff;
-    position: absolute;
-    top: 0;
-    right: 0;
-	letter-spacing: 1px;
-}
-.block-html{
-	position: relative;
 }
 .block-html:after{
     content: 'HTML';
-    display: inline-block;
-    background-color: #717070;
-    padding: 2px 5px;
-    font-size: 10px;
-    color: #fff;
-    position: absolute;
-    top: 0;
-    right: 0;
-	letter-spacing: 1px;
 }
+.block-code:after{
+    content: attr(data-rel);
+}
+
 .menu-s{
 	/*position: sticky;*/
     top: 10px;
     font-size: 15px;
     padding-left: 25px;
+}
+.menu-s__wrapper{
+    background-color: #fff;
+    padding: 0 10px 10px 10px;
+    margin: 0 -10px;
+    position: sticky;
+    top: 10px;
+    overflow-y: auto;
+    max-height: calc(100vh - 10px);
 }
