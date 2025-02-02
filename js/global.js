@@ -17,6 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
 		            selectionStyle: "text",
 		            maxLines: 30,
 		            minLines: 2,
+		            readOnly: true,
+		            enableAutoIndent: true,
+		            displayIndentGuides: false,
+		            showLineNumbers: true,
+		            showGutter: true,
+		            showInvisibles: false,
+		            highlightGutterLine: false
 		        })     
 
 		    })
